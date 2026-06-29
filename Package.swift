@@ -2,28 +2,28 @@
 import PackageDescription
 
 let package = Package(
-    name: "MyCompress",
+    name: "OctoMin",
     platforms: [
         .macOS(.v13)
     ],
     products: [
-        .executable(name: "MyCompressCLI", targets: ["MyCompressCLI"]),
-        .executable(name: "MyCompressApp", targets: ["MyCompressGUI"])
+        .executable(name: "OctoMinCLI", targets: ["OctoMinCLI"]),
+        .executable(name: "OctoMinApp", targets: ["OctoMinGUI"])
     ],
     targets: [
         .target(
-            name: "MyCompressCore",
-            path: "Sources/MyCompressCore"
+            name: "OctoMinCore",
+            path: "Sources/OctoMinCore"
         ),
         .executableTarget(
-            name: "MyCompressCLI",
-            dependencies: ["MyCompressCore"],
-            path: "Sources/MyCompressCLI"
+            name: "OctoMinCLI",
+            dependencies: ["OctoMinCore"],
+            path: "Sources/OctoMinCLI"
         ),
         .executableTarget(
-            name: "MyCompressGUI",
-            dependencies: ["MyCompressCore"],
-            path: "Sources/MyCompressGUI",
+            name: "OctoMinGUI",
+            dependencies: ["OctoMinCore"],
+            path: "Sources/OctoMinGUI",
             resources: [
                 .process("Resources")
             ]
