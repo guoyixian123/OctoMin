@@ -1,0 +1,54 @@
+{
+  "": {
+    "swift-dependencies": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/primary.swiftdeps"
+  },
+  "/Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/AppState.swift": {
+    "dependencies": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/AppState.d",
+    "object": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/AppState.swift.o",
+    "swiftmodule": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/AppState~partial.swiftmodule",
+    "swift-dependencies": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/AppState.swiftdeps",
+    "diagnostics": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/AppState.dia"
+  },
+  "/Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/CompressView.swift": {
+    "dependencies": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/CompressView.d",
+    "object": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/CompressView.swift.o",
+    "swiftmodule": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/CompressView~partial.swiftmodule",
+    "swift-dependencies": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/CompressView.swiftdeps",
+    "diagnostics": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/CompressView.dia"
+  },
+  "/Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/ContentView.swift": {
+    "dependencies": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/ContentView.d",
+    "object": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/ContentView.swift.o",
+    "swiftmodule": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/ContentView~partial.swiftmodule",
+    "swift-dependencies": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/ContentView.swiftdeps",
+    "diagnostics": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/ContentView.dia"
+  },
+  "/Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/DecompressView.swift": {
+    "dependencies": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/DecompressView.d",
+    "object": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/DecompressView.swift.o",
+    "swiftmodule": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/DecompressView~partial.swiftmodule",
+    "swift-dependencies": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/DecompressView.swiftdeps",
+    "diagnostics": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/DecompressView.dia"
+  },
+  "/Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/MyCompressApp.swift": {
+    "dependencies": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/MyCompressApp.d",
+    "object": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/MyCompressApp.swift.o",
+    "swiftmodule": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/MyCompressApp~partial.swiftmodule",
+    "swift-dependencies": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/MyCompressApp.swiftdeps",
+    "diagnostics": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/MyCompressApp.dia"
+  },
+  "/Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/ToolTipModifier.swift": {
+    "dependencies": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/ToolTipModifier.d",
+    "object": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/ToolTipModifier.swift.o",
+    "swiftmodule": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/ToolTipModifier~partial.swiftmodule",
+    "swift-dependencies": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/ToolTipModifier.swiftdeps",
+    "diagnostics": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/ToolTipModifier.dia"
+  },
+  "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/DerivedSources/resource_bundle_accessor.swift": {
+    "dependencies": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/resource_bundle_accessor.d",
+    "object": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/resource_bundle_accessor.swift.o",
+    "swiftmodule": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/resource_bundle_accessor~partial.swiftmodule",
+    "swift-dependencies": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/resource_bundle_accessor.swiftdeps",
+    "diagnostics": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/resource_bundle_accessor.dia"
+  }
+}

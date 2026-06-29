@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI.build/primary.swiftdeps"
+  },
+  "/Users/speed/aiCode/MyCompress/Sources/MyCompressCLI/main.swift": {
+    "dependencies": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI.build/main.d",
+    "object": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI.build/main.swift.o",
+    "swiftmodule": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI.build/main~partial.swiftmodule",
+    "swift-dependencies": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI.build/main.swiftdeps",
+    "diagnostics": "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI.build/main.dia"
+  }
+}

@@ -1,0 +1,3 @@
+module MyCompressCore {
+    header "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/include/MyCompressCore-Swift.h"
+}

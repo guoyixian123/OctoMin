@@ -1,0 +1,170 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "MyCompressApp-arm64-apple-macosx-debug.exe": ["<MyCompressApp-arm64-apple-macosx-debug.exe>"]
+  "MyCompressCLI-arm64-apple-macosx-debug.exe": ["<MyCompressCLI-arm64-apple-macosx-debug.exe>"]
+  "MyCompressCLI-arm64-apple-macosx-debug.module": ["<MyCompressCLI-arm64-apple-macosx-debug.module>"]
+  "MyCompressCore-arm64-apple-macosx-debug.module": ["<MyCompressCore-arm64-apple-macosx-debug.module>"]
+  "MyCompressGUI-arm64-apple-macosx-debug.module": ["<MyCompressGUI-arm64-apple-macosx-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<MyCompressApp-arm64-apple-macosx-debug.exe>","<MyCompressCLI-arm64-apple-macosx-debug.exe>","<MyCompressCLI-arm64-apple-macosx-debug.module>","<MyCompressCore-arm64-apple-macosx-debug.module>","<MyCompressGUI-arm64-apple-macosx-debug.module>"]
+  "test": ["<MyCompressApp-arm64-apple-macosx-debug.exe>","<MyCompressCLI-arm64-apple-macosx-debug.exe>","<MyCompressCLI-arm64-apple-macosx-debug.module>","<MyCompressCore-arm64-apple-macosx-debug.module>","<MyCompressGUI-arm64-apple-macosx-debug.module>"]
+default: "main"
+nodes:
+  "/Users/speed/aiCode/MyCompress/Sources/MyCompressCLI/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/speed/aiCode/MyCompress/Sources/MyCompressCore/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressApp":
+    is-mutated: true
+  "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI":
+    is-mutated: true
+commands:
+  "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressApp-entitlement.plist":
+    tool: write-auxiliary-file
+    inputs: ["<entitlement-plist>","<com.apple.security.get-task-allow>"]
+    outputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressApp-entitlement.plist"]
+    description: "Write auxiliary file /Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressApp-entitlement.plist"
+
+  "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressApp.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/CompressionEngine.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/CryptoEngine.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/MCZFormat.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/ParallelCompressor.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/ParallelDecompressor.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/UniversalExtractor.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/AppState.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/CompressView.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/ContentView.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/DecompressView.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/MyCompressApp.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/ToolTipModifier.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/resource_bundle_accessor.swift.o"]
+    outputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressApp.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressApp.product/Objects.LinkFileList"
+
+  "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI-entitlement.plist":
+    tool: write-auxiliary-file
+    inputs: ["<entitlement-plist>","<com.apple.security.get-task-allow>"]
+    outputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI-entitlement.plist"]
+    description: "Write auxiliary file /Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI-entitlement.plist"
+
+  "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/speed/aiCode/MyCompress/Sources/MyCompressCLI/main.swift"]
+    outputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI.build/sources"]
+    description: "Write auxiliary file /Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI.build/sources"
+
+  "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI.build/main.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/CompressionEngine.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/CryptoEngine.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/MCZFormat.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/ParallelCompressor.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/ParallelDecompressor.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/UniversalExtractor.swift.o"]
+    outputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI.product/Objects.LinkFileList"
+
+  "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/speed/aiCode/MyCompress/Sources/MyCompressCore/CompressionEngine.swift","/Users/speed/aiCode/MyCompress/Sources/MyCompressCore/CryptoEngine.swift","/Users/speed/aiCode/MyCompress/Sources/MyCompressCore/MCZFormat.swift","/Users/speed/aiCode/MyCompress/Sources/MyCompressCore/ParallelCompressor.swift","/Users/speed/aiCode/MyCompress/Sources/MyCompressCore/ParallelDecompressor.swift","/Users/speed/aiCode/MyCompress/Sources/MyCompressCore/UniversalExtractor.swift"]
+    outputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/sources"]
+    description: "Write auxiliary file /Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/sources"
+
+  "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/AppState.swift","/Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/CompressView.swift","/Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/ContentView.swift","/Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/DecompressView.swift","/Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/MyCompressApp.swift","/Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/ToolTipModifier.swift","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/DerivedSources/resource_bundle_accessor.swift"]
+    outputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/sources"]
+    description: "Write auxiliary file /Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/sources"
+
+  "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompress_MyCompressGUI.bundle/AppIcon.icns":
+    tool: copy-tool
+    inputs: ["/Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/Resources/AppIcon.icns"]
+    outputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompress_MyCompressGUI.bundle/AppIcon.icns"]
+    description: "Copying /Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/Resources/AppIcon.icns"
+
+  "/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"]
+    outputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+
+  "<MyCompressApp-arm64-apple-macosx-debug.exe>":
+    tool: phony
+    inputs: ["<MyCompressApp-arm64-apple-macosx-debug.exe-CodeSigning>"]
+    outputs: ["<MyCompressApp-arm64-apple-macosx-debug.exe>"]
+
+  "<MyCompressCLI-arm64-apple-macosx-debug.exe>":
+    tool: phony
+    inputs: ["<MyCompressCLI-arm64-apple-macosx-debug.exe-CodeSigning>"]
+    outputs: ["<MyCompressCLI-arm64-apple-macosx-debug.exe>"]
+
+  "<MyCompressCLI-arm64-apple-macosx-debug.module>":
+    tool: phony
+    inputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI.build/main.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/Modules/MyCompressCLI.swiftmodule"]
+    outputs: ["<MyCompressCLI-arm64-apple-macosx-debug.module>"]
+
+  "<MyCompressCore-arm64-apple-macosx-debug.module>":
+    tool: phony
+    inputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/CompressionEngine.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/CryptoEngine.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/MCZFormat.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/ParallelCompressor.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/ParallelDecompressor.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/UniversalExtractor.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/Modules/MyCompressCore.swiftmodule"]
+    outputs: ["<MyCompressCore-arm64-apple-macosx-debug.module>"]
+
+  "<MyCompressGUI-arm64-apple-macosx-debug.module>":
+    tool: phony
+    inputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/AppState.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/CompressView.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/ContentView.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/DecompressView.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/MyCompressApp.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/ToolTipModifier.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/resource_bundle_accessor.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/Modules/MyCompressGUI.swiftmodule"]
+    outputs: ["<MyCompressGUI-arm64-apple-macosx-debug.module>"]
+
+  "C.MyCompressApp-arm64-apple-macosx-debug.exe":
+    tool: shell
+    inputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/CompressionEngine.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/CryptoEngine.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/MCZFormat.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/ParallelCompressor.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/ParallelDecompressor.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/UniversalExtractor.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/AppState.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/CompressView.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/ContentView.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/DecompressView.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/MyCompressApp.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/ToolTipModifier.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/resource_bundle_accessor.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressApp.product/Objects.LinkFileList"]
+    outputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressApp"]
+    description: "Linking ./.build/arm64-apple-macosx/debug/MyCompressApp"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-L","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug","-o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressApp","-module-name","MyCompressApp","-Xlinker","-no_warn_duplicate_libraries","-emit-executable","-Xlinker","-alias","-Xlinker","_MyCompressGUI_main","-Xlinker","_main","-Xlinker","-rpath","-Xlinker","@loader_path","@/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressApp.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-6.2/macosx","-target","arm64-apple-macosx13.0","-Xlinker","-add_ast_path","-Xlinker","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/Modules/MyCompressCore.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/Modules/MyCompressGUI.swiftmodule","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g"]
+
+  "C.MyCompressApp-arm64-apple-macosx-debug.exe-entitlements":
+    tool: shell
+    inputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressApp","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressApp-entitlement.plist"]
+    outputs: ["<MyCompressApp-arm64-apple-macosx-debug.exe-CodeSigning>"]
+    description: "Applying debug entitlements to ./.build/arm64-apple-macosx/debug/MyCompressApp"
+    args: ["codesign","--force","--sign","-","--entitlements","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressApp-entitlement.plist","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressApp"]
+
+  "C.MyCompressCLI-arm64-apple-macosx-debug.exe":
+    tool: shell
+    inputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI.build/main.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/CompressionEngine.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/CryptoEngine.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/MCZFormat.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/ParallelCompressor.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/ParallelDecompressor.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/UniversalExtractor.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI.product/Objects.LinkFileList"]
+    outputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI"]
+    description: "Linking ./.build/arm64-apple-macosx/debug/MyCompressCLI"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-L","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug","-o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI","-module-name","MyCompressCLI","-Xlinker","-no_warn_duplicate_libraries","-emit-executable","-Xlinker","-alias","-Xlinker","_MyCompressCLI_main","-Xlinker","_main","-Xlinker","-rpath","-Xlinker","@loader_path","@/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-6.2/macosx","-target","arm64-apple-macosx13.0","-Xlinker","-add_ast_path","-Xlinker","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/Modules/MyCompressCLI.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/Modules/MyCompressCore.swiftmodule","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g"]
+
+  "C.MyCompressCLI-arm64-apple-macosx-debug.exe-entitlements":
+    tool: shell
+    inputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI-entitlement.plist"]
+    outputs: ["<MyCompressCLI-arm64-apple-macosx-debug.exe-CodeSigning>"]
+    description: "Applying debug entitlements to ./.build/arm64-apple-macosx/debug/MyCompressCLI"
+    args: ["codesign","--force","--sign","-","--entitlements","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI-entitlement.plist","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI"]
+
+  "C.MyCompressCLI-arm64-apple-macosx-debug.module":
+    tool: shell
+    inputs: ["/Users/speed/aiCode/MyCompress/Sources/MyCompressCLI/main.swift","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/Modules/MyCompressCore.swiftmodule","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI.build/sources"]
+    outputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI.build/main.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/Modules/MyCompressCLI.swiftmodule"]
+    description: "Compiling Swift Module 'MyCompressCLI' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","MyCompressCLI","-emit-dependencies","-emit-module","-emit-module-path","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/Modules/MyCompressCLI.swiftmodule","-output-file-map","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI.build/output-file-map.json","-incremental","-c","@/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCLI.build/sources","-I","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx13.0","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j12","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-Xfrontend","-entry-point-function-name","-Xfrontend","MyCompressCLI_main","-swift-version","5","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","mycompress"]
+
+  "C.MyCompressCore-arm64-apple-macosx-debug.module":
+    tool: shell
+    inputs: ["/Users/speed/aiCode/MyCompress/Sources/MyCompressCore/CompressionEngine.swift","/Users/speed/aiCode/MyCompress/Sources/MyCompressCore/CryptoEngine.swift","/Users/speed/aiCode/MyCompress/Sources/MyCompressCore/MCZFormat.swift","/Users/speed/aiCode/MyCompress/Sources/MyCompressCore/ParallelCompressor.swift","/Users/speed/aiCode/MyCompress/Sources/MyCompressCore/ParallelDecompressor.swift","/Users/speed/aiCode/MyCompress/Sources/MyCompressCore/UniversalExtractor.swift","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/sources"]
+    outputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/CompressionEngine.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/CryptoEngine.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/MCZFormat.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/ParallelCompressor.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/ParallelDecompressor.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/UniversalExtractor.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/Modules/MyCompressCore.swiftmodule"]
+    description: "Compiling Swift Module 'MyCompressCore' (6 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","MyCompressCore","-emit-dependencies","-emit-module","-emit-module-path","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/Modules/MyCompressCore.swiftmodule","-output-file-map","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/sources","-I","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx13.0","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j12","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressCore.build/include/MyCompressCore-Swift.h","-swift-version","5","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","mycompress"]
+
+  "C.MyCompressGUI-arm64-apple-macosx-debug.module":
+    tool: shell
+    inputs: ["/Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/AppState.swift","/Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/CompressView.swift","/Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/ContentView.swift","/Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/DecompressView.swift","/Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/MyCompressApp.swift","/Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/ToolTipModifier.swift","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/DerivedSources/resource_bundle_accessor.swift","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","<MyCompressGUI-arm64-apple-macosx-debug.module-resources>","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/Modules/MyCompressCore.swiftmodule","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/sources"]
+    outputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/AppState.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/CompressView.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/ContentView.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/DecompressView.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/MyCompressApp.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/ToolTipModifier.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/resource_bundle_accessor.swift.o","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/Modules/MyCompressGUI.swiftmodule"]
+    description: "Compiling Swift Module 'MyCompressGUI' (7 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","MyCompressGUI","-emit-dependencies","-emit-module","-emit-module-path","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/Modules/MyCompressGUI.swiftmodule","-output-file-map","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/output-file-map.json","-incremental","-c","@/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompressGUI.build/sources","-I","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx13.0","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j12","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE","-module-cache-path","/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-Xfrontend","-entry-point-function-name","-Xfrontend","MyCompressGUI_main","-swift-version","5","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","mycompress"]
+
+  "MyCompressGUI-arm64-apple-macosx-debug.module-resources":
+    tool: phony
+    inputs: ["/Users/speed/aiCode/MyCompress/.build/arm64-apple-macosx/debug/MyCompress_MyCompressGUI.bundle/AppIcon.icns"]
+    outputs: ["<MyCompressGUI-arm64-apple-macosx-debug.module-resources>"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/speed/aiCode/MyCompress/Sources/MyCompressCLI/","/Users/speed/aiCode/MyCompress/Sources/MyCompressCore/","/Users/speed/aiCode/MyCompress/Sources/MyCompressGUI/","/Users/speed/aiCode/MyCompress/Package.swift","/Users/speed/aiCode/MyCompress/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+
